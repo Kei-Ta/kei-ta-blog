@@ -1,5 +1,6 @@
 import { GetStaticProps } from 'next';
 import { getSortedPostsData } from '../lib/posts';
+import Link from 'next/link';
 
 export const getStaticProps: GetStaticProps = async () => {
     const allPostsData = getSortedPostsData();
@@ -17,7 +18,9 @@ const Home = ({ allPostsData }: { allPostsData: { id: string; date: string; titl
             <ul>
                 {allPostsData.map(({ id, date, title }) => (
                     <li key={id}>
-                        <a href={`/posts/${id}`}>{title}</a>
+                        <Link href={`/posts/${id}`}>
+                            <a>{title}</a>
+                        </Link>
                         <br />
                         <small>{date}</small>
                     </li>

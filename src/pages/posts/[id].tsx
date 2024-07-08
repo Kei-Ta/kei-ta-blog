@@ -4,6 +4,7 @@ import matter from 'gray-matter';
 import { remark } from 'remark';
 import html from 'remark-html';
 import { GetStaticProps, GetStaticPaths } from 'next';
+import Link from 'next/link';
 
 const postsDirectory = path.join(process.cwd(), 'src/posts');
 
@@ -44,9 +45,10 @@ const Post = ({ postData }: { postData: { title: string; contentHtml: string } }
         <div>
             <h1>{postData.title}</h1>
             <div dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
-            <a href={`/`}>{"top"}</a>
+            <Link href="/">
+                <a>Top</a>
+            </Link>
         </div>
-
     );
 };
 
