@@ -17,7 +17,7 @@ const Home = ({ allPostsData }: { allPostsData: { id: string; date: string; titl
             <ul>
                 {allPostsData.map(({ id, date, title }) => (
                     <li key={id}>
-                        <a href={`/posts/${id}`}>{title}</a>
+                        <a href={`/kei-ta-blog/posts/${id}`}>{title}</a>
                         <br />
                         <small>{date}</small>
                     </li>
