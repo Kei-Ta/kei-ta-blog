@@ -1,4 +1,8 @@
-/** @type {import('next').NextConfig} */
-const nextConfig = {};
+const isProd = process.env.NODE_ENV === 'production';
 
-export default nextConfig;
+module.exports = {
+    reactStrictMode: true,
+    output: 'export',
+    basePath: isProd ? '/kei-ta-blog' : '',
+    assetPrefix: isProd ? '/kei-ta-blog/' : '',
+};
