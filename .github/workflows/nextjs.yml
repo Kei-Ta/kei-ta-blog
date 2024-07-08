@@ -19,8 +19,6 @@ jobs:
 
       - name: Install dependencies
         run: npm install
-        env:
-          HUSKY: "0"
 
       - name: Build project
         run: npm run build && npm run export
